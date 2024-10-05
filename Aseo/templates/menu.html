@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Opciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex; /* Usar Flexbox para centrar el contenido */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+        }
+        .menu {
+            background-color: #333;
+            border-radius: 10px; /* Bordes redondeados para el menú */
+            padding: 10px; /* Espaciado interno */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto 3D */
+        }
+        .menu ul {
+            list-style-type: none; /* Quitar los puntos de la lista */
+            padding: 0; /* Quitar el padding */
+            margin: 0; /* Quitar el margin */
+            display: flex; /* Usar Flexbox para alinear los elementos */
+            justify-content: center; /* Centrar los elementos en el menú */
+        }
+        .menu li {
+            margin: 0 10px; /* Espaciado entre los botones */
+        }
+        .menu a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            background-color: green; /* Color de fondo verde */
+            border-radius: 20px; /* Bordes redondeados para los botones */
+            transition: background-color 0.3s; /* Transición suave para el hover */
+        }
+        .menu a:hover {
+            background-color: #575757; /* Color de fondo en hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Menú de Opciones</h1>
+    <div class="menu">
+        <ul>
+            {% for opcion in opciones %}
+                <li><a href="#">{{ opcion }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
