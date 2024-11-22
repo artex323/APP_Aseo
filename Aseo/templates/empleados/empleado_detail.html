@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle de Empleado</title>
+</head>
+<body>
+    <h1>{{ empleado.nombre_empleado }}</h1>
+    <p>Teléfono: {{ empleado.telefono }}</p>
+    <p>Email: {{ empleado.email }}</p>
+    <p>Cargo: {{ empleado.cargo }}</p>
+    <a href="{% url 'empleado_list' %}">Volver a la Lista</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Factura</title>
+</head>
+<body>
+    <h1>Detalle de la Factura</h1>
+    <p><strong>ID Factura:</strong> {{ factura.id_factura }}</p>
+    <p><strong>Fecha:</strong> {{ factura.fecha }}</p>
+    <p><strong>Monto Total:</strong> {{ factura.monto_total }}</p>
+    <p><strong>Cliente:</strong> {{ factura.id_cliente }}</p>
+    <p><strong>Reserva:</strong> {{ factura.id_reserva }}</p>
+    <a href="{% url 'lista_facturas' %}">Volver a la lista</a>
+</body>
+</html>

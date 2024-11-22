@@ -1,0 +1,37 @@
+<!-- servicio_list.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Servicios</title>
+</head>
+<body>
+    <h1>Lista de Servicios</h1>
+    <a href="{% url 'servicio-create' %}">Crear nuevo servicio</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for servicio in servicios %}
+                <tr>
+                    <td>{{ servicio.id_servicio }}</td>
+                    <td>{{ servicio.nombre }}</td>
+                    <td>{{ servicio.descripcion }}</td>
+                    <td>{{ servicio.precio }}</td>
+                    <td>
+                        <a href="{% url 'servicio-edit' servicio.pk %}">Editar</a> |
+                        <a href="{% url 'servicio-delete' servicio.pk %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

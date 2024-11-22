@@ -1,0 +1,17 @@
+<!-- servicio_form.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if object %}Editar{% else %}Crear{% endif %} Servicio</title>
+</head>
+<body>
+    <h1>{% if object %}Editar{% else %}Crear{% endif %} Servicio</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'servicio-list' %}">Volver a la lista</a>
+</body>
+</html>

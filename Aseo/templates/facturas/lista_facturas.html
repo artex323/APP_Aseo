@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Facturas</title>
+</head>
+<body>
+    <h1>Facturas</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID Factura</th>
+                <th>Fecha</th>
+                <th>Monto Total</th>
+                <th>Cliente</th>
+                <th>Reserva</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for factura in facturas %}
+            <tr>
+                <td>{{ factura.id_factura }}</td>
+                <td>{{ factura.fecha }}</td>
+                <td>{{ factura.monto_total }}</td>
+                <td>{{ factura.id_cliente }}</td>
+                <td>{{ factura.id_reserva }}</td>
+                <td><a href="{% url 'detalle_factura' factura.id_factura %}">Ver detalles</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
